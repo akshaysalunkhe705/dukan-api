@@ -24,9 +24,11 @@ exports.register = (req, res, next) => {
         });
 };
 
-exports.login = (req, res, next) => {
-    return false;
-}
+// exports.login = (req, res, next) => {
+//     return res.status(200).json({
+//         login:"LOGIN"
+//     })
+// }
 
 exports.customerDetails = (req, res, next) => {
     const customerId = req.params.customerId;

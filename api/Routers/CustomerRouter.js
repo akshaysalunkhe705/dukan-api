@@ -6,6 +6,7 @@ const CustomerController = require('../Controllers/CustomerController')
 
 //Routers Defined
 router.post('/register', CustomerController.register)
+//router.post('/login', CustomerController.login)
 router.get('/:customerId', CustomerController.customerDetails)
 
 //Export Router
