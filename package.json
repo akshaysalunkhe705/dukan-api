@@ -1,0 +1,22 @@
+{
+  "name": "dukan",
+  "version": "1.0.0",
+  "description": "Local Shop ",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akshaysalunkhe705/dukan-api.git"
+  },
+  "author": "Akshay Yashwant Salunkhe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akshaysalunkhe705/dukan-api/issues"
+  },
+  "homepage": "https://github.com/akshaysalunkhe705/dukan-api#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
