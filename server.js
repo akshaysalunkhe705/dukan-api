@@ -1,9 +1,9 @@
 const http = require('http')
 const app = require('./app')
 const cluster = require('cluster')
-const numCPU = require('os').cpus().length
+const numCPUs = require('os').cpus().length
 
-const PORT = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 
 
 if (cluster.isMaster)

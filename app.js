@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express();
-const bodyParser = require('body-parse')
+const morgan = require('morgan');
+const bodyParse = require('body-parser')
 const mongoose = require('mongoose')
 
 mongoose.connect('mongodb://127.0.0.1/dukan',{ useNewUrlParser:true, useUnifiedTopology:true }).then(() => {
@@ -8,3 +9,48 @@ mongoose.connect('mongodb://127.0.0.1/dukan',{ useNewUrlParser:true, useUnifiedT
 }).catch((err) => {
     console.log("Not Connected to Database ERROR! ", err);
 });
+
+app.use(morgan('dev'));
+
+app.use(bodyParse.urlencoded({ extended: false }));
+app.use(bodyParse.json());
+
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+    if (req.method == 'OPTIONS') {
+        res.header('Access-Control-Allow-Methods', 'PUT, PATCH, POST, DELETE, GET');
+        return res.status(200).json({});
+    }
+    next();
+});
+
+
+
+
+// ////////////////////////////////// Routers
+app.use((req, res, next)=>{
+    return res.status(200).json({
+        msg:"COOL"
+    })
+})
+
+
+
+
+//////////////////////////////////// Error Handlings
+app.use((req, res, next) => {
+    const error = new Error("Not Found");
+    error.status = 404;
+    next(error);
+});
+app.use((error, req, res, next) => {
+    res.status(error.status || 500);
+    res.json({
+        error: {
+            message: error.message
+        }
+    });
+});
+
+module.exports = app;
