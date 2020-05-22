@@ -4,6 +4,11 @@ const morgan = require('morgan');
 const bodyParse = require('body-parser')
 const mongoose = require('mongoose')
 
+//const dotenv = require('dotenv');
+//dotenv.config();
+// ///////////////////////////////Import Router
+const CustomerRouter = require('./api/Routers/CustomerRouter');
+
 mongoose.connect('mongodb://127.0.0.1/dukan',{ useNewUrlParser:true, useUnifiedTopology:true }).then(() => {
     console.log("Connected to Database");
 }).catch((err) => {
@@ -26,16 +31,8 @@ app.use((req, res, next) => {
 });
 
 
-
-
 // ////////////////////////////////// Routers
-app.use((req, res, next)=>{
-    return res.status(200).json({
-        msg:"COOL"
-    })
-})
-
-
+app.use('/CustomerRouter', CustomerRouter);
 
 
 //////////////////////////////////// Error Handlings
