@@ -1,13 +1,14 @@
 const express = require('express')
 const router = express.Router();
+const verifyLogin = require('../Middlewares/TokenVerify')
 
 //Controller Import
-const CustomerController = require('../Controllers/CustomerController')
+const {register, login, customerDetails } = require('../Controllers/CustomerController')
 
 //Routers Defined
-router.post('/register', CustomerController.register)
-//router.post('/login', CustomerController.login)
-router.get('/:customerId', CustomerController.customerDetails)
+router.post('/register', register)
+router.post('/login', login)
+router.get('/:customerId', verifyLogin.auth, customerDetails)
 
 //Export Router
 module.exports = router;
