@@ -8,6 +8,8 @@ const mongoose = require('mongoose')
 //dotenv.config();
 // ///////////////////////////////Import Router
 const CustomerRouter = require('./api/Routers/CustomerRouter');
+const ShopkeeperRouter = require('./api/Routers/ShopkeeperRouter');
+const CategoryRouter = require('./api/Routers/CategoryRouter');
 
 mongoose.connect('mongodb://127.0.0.1/dukan',{ useNewUrlParser:true, useUnifiedTopology:true }).then(() => {
     console.log("Connected to Database");
@@ -33,7 +35,8 @@ app.use((req, res, next) => {
 
 // ////////////////////////////////// Routers
 app.use('/CustomerRouter', CustomerRouter);
-
+app.use('/ShopkeeperRouter', ShopkeeperRouter);
+app.use('/CategoryRouter', CategoryRouter);
 
 //////////////////////////////////// Error Handlings
 app.use((req, res, next) => {
