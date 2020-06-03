@@ -1,6 +1,5 @@
 const express = require('express')
 const router = express.Router();
-const verifyLogin = require('../Middlewares/TokenVerify')
 
 //Controller Import
 const { register, categoryDetails, categoryList } = require('../Controllers/CategoryController')

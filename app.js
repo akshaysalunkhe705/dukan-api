@@ -35,8 +35,8 @@ app.use((req, res, next) => {
 
 // ////////////////////////////////// Routers
 app.use('/CustomerRouter', CustomerRouter);
-app.use('/ShopkeeperRouter', ShopkeeperRouter);
 app.use('/CategoryRouter', CategoryRouter);
+app.use('/ShopkeeperRouter', ShopkeeperRouter);
 
 //////////////////////////////////// Error Handlings
 app.use((req, res, next) => {
