@@ -3,7 +3,7 @@ const router = express.Router();
 const verifyLogin = require('../Middlewares/TokenVerify')
 
 //Controller Import
-const { customerOrderRequest, shopkeeperOrderResponse } = require('../Controllers/GroceryListController')
+const { customerOrderRequest, shopkeeperOrderResponse } = require('../Controllers/OrderListController')
 
 //Routers Defined
 // router.post('customerOrderRequest/:customerId/:shopkeeperId', verifyLogin.auth, customerOrderRequest)

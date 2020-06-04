@@ -28,6 +28,7 @@ exports.register = (req, res, next) => {
                   //add shopkeeper here
                   const shopkeeper = new ShopkeeperModel({
                     _id: mongoose.Types.ObjectId(),
+                    category_id: mongoose.Types.ObjectId(),
                     shop_name: req.body.shop_name,
                     email: req.body.email,
                     password: hashPassword,
