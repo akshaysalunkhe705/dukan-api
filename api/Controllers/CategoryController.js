@@ -16,34 +16,6 @@ exports.register = (req, res, next) => {
       console.log(err);
       return res.status(500).json(err);
     });
-  // CategoryModel.findOne({ category_name: req.body.category_name })
-  //   .exec()
-  //   .then((categoryNameResult) => {
-  //     if (categoryNameResult) {
-  //       return res.status(400).json({
-  //         message: "Category Name is duplicate",
-  //       });
-  //     } else {
-  //       const category = new CategoryModel({
-  //         _id: mongoose.Types.ObjectId(),
-  //         category_name: req.body.category_name
-  //       });
-  //       category
-  //         .save()
-  //         .then((result) => {
-  //           console.log(result);
-  //           return res.status(200).json(result);
-  //         })
-  //         .catch((err) => {
-  //           console.log(err);
-  //           return res.status(500).json(err);
-  //         });
-  //     }
-  //   })
-  //   .catch((err) => {
-  //     console.log(err);
-  //     return res.status(500).json(err);
-  //   });
 };
 
 exports.categoryDetails = (req, res, next) => {

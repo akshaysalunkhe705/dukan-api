@@ -4,7 +4,6 @@ const verifyLogin = require('../Middlewares/TokenVerify')
 
 //Controller Import
 const { register, login, shopkeeperDetails, shopkeeperList, shopkeeperListByCategory } = require('../Controllers/ShopkeeperController')
-//const { register } = require('../Controllers/ShopkeeperController')
 
 //Routers Defined
 router.post('/register', register)
