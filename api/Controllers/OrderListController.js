@@ -1,13 +1,13 @@
 const mongoose = require("mongoose");
-const CustomerModel = require("../Models/CustomerModel");
-const bycryptjs = require("bcryptjs");
-const jwt = require("jsonwebtoken");
 
-exports.customerOrderRequest = (req, res, next)=>{
-    const custId = req.params.customerId;
-    const shopkeeperId = req.params.shopkeeperId;
-}
+exports.customerOrderRequest = (req, res, next) => {
+  const customerId = req.params.customerId;
+  const shopkeeperId = req.params.shopkeeperId;
 
-exports.shopkeeperOrderResponse = (req, res, next)=>{
+  return res.status(200).json({
+    "Customer Id": customerId,
+    "Shopkeeper Id": shopkeeperId,
+  });
+};
 
-}
+exports.shopkeeperOrderResponse = (req, res, next) => {};
