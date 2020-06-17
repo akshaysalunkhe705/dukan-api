@@ -8,7 +8,7 @@ const mongoose = require("mongoose");
 const CustomerRouter = require("./api/Routers/CustomerRouter");
 const CategoryRouter = require("./api/Routers/CategoryRouter");
 const ShopkeeperRouter = require("./api/Routers/ShopkeeperRouter");
-const OrderListRouter = require("./api/Routers/OrderListRouter");
+const OrderRouter = require("./api/Routers/OrderRouter");
 
 mongoose
   .connect("mongodb://127.0.0.1/dukan", {
@@ -44,7 +44,7 @@ app.use((req, res, next) => {
 app.use("/CustomerRouter", CustomerRouter);
 app.use("/CategoryRouter", CategoryRouter);
 app.use("/ShopkeeperRouter", ShopkeeperRouter);
-app.use("/OrderListRouter", OrderListRouter);
+app.use("/OrderRouter", OrderRouter);
 
 //////////////////////////////////// Error Handlings
 app.use((req, res, next) => {
