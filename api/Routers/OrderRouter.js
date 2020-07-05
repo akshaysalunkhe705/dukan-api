@@ -19,7 +19,6 @@ const orderImageUpload = multer({
     bucket: "cdn-api-hosting",
     acl: "public-read",
     key: function (req, orderImages, cb) {
-      console.log(req.files);
       cb(null, orderImages.originalname);
     },
   }),
