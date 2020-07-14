@@ -59,7 +59,7 @@ exports.customerOrderListOfCustomer = (req, res, next) => {
     });
 };
 
-exports.customerOrderListOfShopkeeper = (req, res, next){
+exports.customerOrderListOfShopkeeper = (req, res, next) => {
 
 };
 
