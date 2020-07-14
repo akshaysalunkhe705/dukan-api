@@ -44,7 +44,7 @@ exports.customerOrderRequest = (req, res, next) => {
 
 };
 
-exports.customerOrderListOfCustomer = (req, res, next){
+exports.customerOrderListOfCustomer = (req, res, next) => {
   const customerId = req.params.customerId;
   return OrderModel.find()
     .where({
