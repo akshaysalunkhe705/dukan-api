@@ -29,11 +29,17 @@ const orderImageUpload = multer({
 const {
   customerOrderRequest,
   shopkeeperOrderResponse,
+  customerOrderListOfCustomer
 } = require("../Controllers/OrderController");
 
 //Routers Defined
 router.post(
   "/customerOrderRequest/:customerId/:shopkeeperId",
+  orderImageUpload,
+  customerOrderRequest
+);
+router.get(
+  "/customerOrderListOfCustomer/:customerId",
   orderImageUpload,
   customerOrderRequest
 );

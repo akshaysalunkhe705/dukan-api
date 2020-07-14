@@ -44,4 +44,23 @@ exports.customerOrderRequest = (req, res, next) => {
 
 };
 
+exports.customerOrderListOfCustomer = (req, res, next){
+  const customerId = req.params.customerId;
+  return OrderModel.find()
+    .where({
+      customer_id: customerId,
+    })
+    .exec()
+    .then((result) => {
+      return res.status(200).json(result);
+    })
+    .catch((err) => {
+      return res.status(500).json(err);
+    });
+};
+
+exports.customerOrderListOfShopkeeper = (req, res, next){
+
+};
+
 exports.shopkeeperOrderResponse = (req, res, next) => {};
